@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "container-era-terraform-sample"
-    key = "sample/iam/terraform.tfstate"
+    bucket = "terraform-sample-ed"
+    key = "terraform-sample/iam/terraform.tfstate"
     region = "ap-northeast-1"
   }
 }
