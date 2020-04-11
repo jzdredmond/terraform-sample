@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "container-era-terraform-sample"
+    bucket = "terraform-sample-ed"
     key = "terraform-sample/vpc/terraform.tfstate"
     region = "ap-northeast-1"
   }
