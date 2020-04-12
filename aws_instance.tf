@@ -2,8 +2,8 @@ resource "aws_instance" "sample" {
   ami = "ami-0e37e42dff65024ae"
   instance_type = "t2.small"
   monitoring = true
-  iam_instance_profile = data.terraform_remote_state.aws_iam.outputs.ecs_instance_profile_name
-  subnet_id = data.terraform_remote_state.vpc.outputs.public_subnet_1_id
+  iam_instance_profile = "${aws_iam_instance_profile.ecs_instance_profile.name}" # 他リソースの属性の参照
+  subnet_id = "${aws_subnet.public_subnet_1.id}" # 他リソースの属性の参照
   user_data = file("./user_data.sh")
   associate_public_ip_address = true
 
